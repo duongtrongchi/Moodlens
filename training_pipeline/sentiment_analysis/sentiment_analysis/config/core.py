@@ -6,7 +6,6 @@ from pydantic import BaseModel
 import sentiment_analysis
 
 
-
 PACKAGE_ROOT = Path(sentiment_analysis.__file__).resolve().parent
 ROOT = PACKAGE_ROOT.parent
 DATASET_DIR = PACKAGE_ROOT / "datasets"
@@ -68,7 +67,6 @@ def create_and_validate_config(parser_config=None):
     return _config
 
 
-
 config = create_and_validate_config()
-print(config)
+
 
