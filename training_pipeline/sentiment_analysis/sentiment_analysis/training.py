@@ -1,6 +1,6 @@
 from transformers import Trainer, TrainingArguments
 
-
+from sentiment_analysis.config.core import config
 from sentiment_analysis.models import build_model
 from sentiment_analysis.processing.data_handling import load_dataset
 from sentiment_analysis.processing.data_processing import (
@@ -9,21 +9,24 @@ from sentiment_analysis.processing.data_processing import (
     split_dataset
 )
 
-
+# data_path = None
 dataset = label_encoding(load_dataset())
 tokennizor_ds = tokennizor_dataset(dataset)
 train_dataset, valid_dataset = split_dataset(tokennizor_ds)
 
-tokenizer, model = build_model()
+tokenizer, model = build_model(
+    model_id=config.training_config.huggingface_model_id,
+    num_label=config.training_config.num_labels
+)
 
 training_args = TrainingArguments(
-    output_dir='./results',
-    evaluation_strategy="epoch",
-    learning_rate=2e-5,
-    per_device_train_batch_size=8,
-    per_device_eval_batch_size=8,
-    num_train_epochs=3,
-    weight_decay=0.01,
+    output_dir=f"./{config.training_config.output_dir}",
+    evaluation_strategy=config.training_config.evaluation_strategy,
+    learning_rate=config.training_config.learning_rate,
+    per_device_train_batch_size=config.training_config.per_device_train_batch_size,
+    per_device_eval_batch_size=config.training_config.per_device_eval_batch_size,
+    num_train_epochs=config.training_config.num_train_epochs,
+    weight_decay=config.training_config.weight_decay,
 )
 
 trainer = Trainer(

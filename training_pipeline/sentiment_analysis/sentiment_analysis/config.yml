@@ -3,7 +3,7 @@ package_name: sentiment_analysis
 
 training_config:
   huggingface_model_id: bert-base-uncased
-  training_dataset_name: train.jsonl
+  training_dataset_name: training.jsonl
   test_dataset_name: test.jsonl
   padding: max_length
   truncation: True
