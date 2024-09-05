@@ -4,13 +4,13 @@ package_name: sentiment_analysis
 training_config:
   huggingface_model_id: bert-base-uncased
   training_dataset_name: training.jsonl
-  test_dataset_name: test.jsonl
+  test_dataset_name: eval.jsonl
   padding: max_length
   truncation: True
   shuffle: True
   batch_zise: 8
   num_labels: 2
-  output_dir: sentiment_analysis_version_0.0.2
+  output_dir: sentiment_analysis_version_0.0.4
   evaluation_strategy: epoch
   learning_rate: 2e-5
   per_device_train_batch_size: 8
