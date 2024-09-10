@@ -11,7 +11,6 @@ from sentiment_analysis.processing.data_processing import (
 )
 
 
-
 def training_pipeline():
     dataset = label_encoding(load_dataset())
     tokennizor_ds = tokennizor_dataset(dataset)
@@ -38,7 +37,7 @@ def training_pipeline():
         args=training_args,
         train_dataset=train_dataset,
         eval_dataset=valid_dataset,
-        # compute_metrics=compute_metrics
+        compute_metrics=compute_metrics
     )
 
     trainer.train()

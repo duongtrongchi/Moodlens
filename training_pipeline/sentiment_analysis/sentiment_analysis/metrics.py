@@ -1,9 +1,9 @@
 import numpy as np
-from datasets import load_metric
+import evaluate
 
 def compute_metrics(eval_pred):
-   load_accuracy = load_metric("accuracy")
-   load_f1 = load_metric("f1")
+   load_accuracy = evaluate.load("accuracy")
+   load_f1 = evaluate.load("f1")
 
    logits, labels = eval_pred
    predictions = np.argmax(logits, axis=-1)
