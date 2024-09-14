@@ -1,0 +1,17 @@
+bert_topic_config:
+  training_dataset_name: training.jsonl
+  evaluation_dataset_name: test.jsonl
+  language: english
+  sentence_transformers_model_id: all-MiniLM-L6-v2
+  stop_words_language: english
+
+
+umap_config:
+  n_neighbors: 10
+  n_components: 2
+  min_dist: 0.0
+  metric: cosine
+
+
+
+
