@@ -9,10 +9,10 @@ PACKAGE_ROOT = Path(topic_modeling.__file__).resolve().parent
 ROOT = PACKAGE_ROOT.parent
 DATASET_DIR = PACKAGE_ROOT / "datasets"
 CONFIG_FILE = PACKAGE_ROOT / "config.yml"
-
+TRAINED_MODEL = PACKAGE_ROOT / "trained_model"
 
 class AppConfig(BaseModel):
-    version_model: str
+    package_name: str
 
 
 class BertTopicConfig(BaseModel):
@@ -31,7 +31,7 @@ class UmapConfig(BaseModel):
 
 
 class Config(BaseModel):
-    # app_config: AppConfig
+    app_config: AppConfig
     bert_topic_config: BertTopicConfig
     umap_config: UmapConfig
 
@@ -51,6 +51,7 @@ def create_and_validate_config(parser_config = None):
         parser_config = fetch_data_from_yaml()
 
     _config = Config(
+        app_config=parser_config.data["app_config"],
         bert_topic_config=parser_config.data["bert_topic_config"],
         umap_config=parser_config.data["umap_config"]
     )

@@ -1,3 +1,6 @@
+app_config:
+  package_name: bert_topic_modeling_v0.0.0
+
 bert_topic_config:
   training_dataset_name: training.jsonl
   evaluation_dataset_name: test.jsonl
