@@ -8,4 +8,4 @@ Key features include:
 - Text Summarization: Condense large volumes of feedback into actionable insights.
 
 ## Model artitecture
-![Alt text](./media/Moodlens-Architecture.png)
+![Alt text](./archive/Moodlens-Architecture.png)
