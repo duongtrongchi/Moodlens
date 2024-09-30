@@ -2,17 +2,16 @@
 name = "feature-pipeline"
 version = "0.1.0"
 description = ""
-authors = ["Duong Trong Chi <duongchi68389@gmail.com>"]
+authors = ["chiduong <duongchi68389@gmail.com>"]
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
-pandas = "^2.2.2"
-datasets = "^2.21.0"
+python = "^3.10"
+feast = "^0.40.1"
+fastapi = "^0.115.0"
+uvicorn = "^0.31.0"
+pandas = "^2.2.3"
 
-
-[tool.poetry.group.dev.dependencies]
-ipykernel = "^6.29.5"
 
 [build-system]
 requires = ["poetry-core"]
