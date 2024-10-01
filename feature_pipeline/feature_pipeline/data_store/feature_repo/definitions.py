@@ -1,4 +1,4 @@
-from feast import FeatureStore, Entity, FeatureView, ValueType, FileSource, Field
+from feast import FeatureStore, Entity, FeatureView, FeatureService, FileSource, Field
 from feast.types import Float32, String
 
 
@@ -86,5 +86,12 @@ financial_aspects_feature_view = FeatureView(
     online=True,
     source=financial_aspects_data_source
 )
+
+
+moodlens = FeatureService(
+    name="moodlens_features",
+    features=[job_evaluation_feature_view, financial_aspects_feature_view]
+)
+
 
 store = FeatureStore(repo_path=".")

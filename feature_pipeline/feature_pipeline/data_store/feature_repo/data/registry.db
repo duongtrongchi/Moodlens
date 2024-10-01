@@ -9,7 +9,7 @@ C
 #
 employees_reviews"idJ
 data_store
-„—ë·Ø®›ä„—ë·Ø®›ä1"$db293c6b-8b91-4886-8259-010265789edd*„—ë·¸‹Æä2á
+„—ë·Ø®›ä„—ë·Ø®›ä1"$5bd3aa7e-ddc3-4842-959c-42dbe4aaf382*Áëï·Ğ¹¥é2á
 À
 job_details
 data_storeemployees_reviews"	
@@ -43,7 +43,20 @@ data_storeemployees_reviews"
 salary_and_benefits"
 job_security:ßevent_timestampZŠ‡/teamspace/studios/this_studio/nlp-hr-feedback/feature_pipeline/feature_pipeline/data_store/feature_repo/data/financial_aspects.parquetŠ1feast.infra.offline_stores.file_source.FileSource¢‡/teamspace/studios/this_studio/nlp-hr-feedback/feature_pipeline/feature_pipeline/data_store/feature_repo/data/financial_aspects.parquet@b
 id
-„—ë·¸Ê±ä„—ë·¸Ê±äR³
+„—ë·¸Ê±ä„—ë·¸Ê±ä:í
+Ì
+moodlens_features
+data_storeT
+job_evaluation
+Overall_rating
+work_satisfaction	
+Likes
+DislikesU
+financial_aspects
+skill_development
+salary_and_benefits
+job_security
+Áëï·à½”éÁëï·à½”éR³
 Î
 ,feast.infra.online_stores.sqlite.SqliteTable"
 }/teamspace/studios/this_studio/nlp-hr-feedback/feature_pipeline/feature_pipeline/data_store/feature_repo/data/online_store.dbdata_store_financial_aspects
