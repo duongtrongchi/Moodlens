@@ -1,0 +1,4 @@
+sentiment_analysis:
+    huggingface_model_id: stevhliu/my_awesome_model
+    trained_model_path: None
+    task: sentiment-analysis
