@@ -8,7 +8,7 @@ import inference_pipeline
 PACKAGE_ROOT = Path(inference_pipeline.__file__).resolve().parent
 ROOT = PACKAGE_ROOT.parent
 CONFIG_YML = PACKAGE_ROOT / "config.yml"
-
+ENV_PATH = PACKAGE_ROOT / ".env"
 
 class SentimentAnalysisConfig(BaseModel):
     huggingface_model_id: str
