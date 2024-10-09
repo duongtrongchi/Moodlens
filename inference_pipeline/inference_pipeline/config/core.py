@@ -10,7 +10,7 @@ ROOT = PACKAGE_ROOT.parent
 CONFIG_YML = PACKAGE_ROOT / "config.yml"
 
 
-class AppConfig(BaseModel):
+class SentimentAnalysisConfig(BaseModel):
     huggingface_model_id: str
     trained_model_path: str
     task: str
@@ -21,7 +21,7 @@ class TopicModelConfig(BaseModel):
 
 
 class Config(BaseModel):
-    app_config: AppConfig
+    sentiment_analysis_config: SentimentAnalysisConfig
     topic_model_config: TopicModelConfig
 
 
@@ -40,7 +40,7 @@ def create_and_validate_config(parser_config=None):
         parser_config = fetch_config_from_yml()
 
     _config = Config(
-        app_config=parser_config.data.get("sentiment_analysis"),
+        sentiment_analysis_config=parser_config.data.get("sentiment_analysis"),
         topic_model_config=parser_config.data.get("topic_modeling"),
     )
     return _config
