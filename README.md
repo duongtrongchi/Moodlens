@@ -1,4 +1,4 @@
-# nlp-hr-feedback
+# Moodlens
 
 # I. Introduction
 This project aims to revolutionize HR processes by leveraging advanced natural language processing (NLP) techniques to analyze employee feedback data. Our tool empowers HR departments to make data-driven decisions, optimize employee experiences, and foster a more productive work environment.
