@@ -16,8 +16,13 @@ class AppConfig(BaseModel):
     task: str
 
 
+class TopicModelConfig(BaseModel):
+    trained_path: str
+
+
 class Config(BaseModel):
     app_config: AppConfig
+    topic_model_config: TopicModelConfig
 
 
 def fetch_config_from_yml(config_path=None):
@@ -35,9 +40,9 @@ def create_and_validate_config(parser_config=None):
         parser_config = fetch_config_from_yml()
 
     _config = Config(
-        app_config=parser_config.data.get("sentiment_analysis")
+        app_config=parser_config.data.get("sentiment_analysis"),
+        topic_model_config=parser_config.data.get("topic_modeling"),
     )
     return _config
 
 config = create_and_validate_config()
-print(config)

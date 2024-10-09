@@ -1,5 +1,8 @@
 from pydantic import BaseModel
+from typing import List
 
-
-class TextGenerationInput(BaseModel):
+class SentimentAnalysisInput(BaseModel):
     prompt: str
+
+class TopicModelInput(BaseModel):
+    docs: List[str]
