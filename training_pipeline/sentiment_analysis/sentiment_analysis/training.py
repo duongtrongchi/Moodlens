@@ -1,4 +1,5 @@
-from transformers import Trainer, TrainingArguments
+import mlflow
+from transformers import Trainer, TrainingArguments, pipeline
 
 from sentiment_analysis.config.core import config, TRAINED_MODEL
 from sentiment_analysis.metrics import compute_metrics
@@ -40,8 +41,40 @@ def training_pipeline():
         compute_metrics=compute_metrics
     )
 
-    trainer.train()
-    trainer.evaluate()
+    mlflow.set_experiment("Employees Classifier Training")
+    with mlflow.start_run() as run:
+        trainer.train()
+        trainer.evaluate()
+
+    tuned_pipeline = pipeline(
+        task="text-classification",
+        model=trainer.model,
+        batch_size=8,
+        tokenizer=tokenizer,
+        device="cpu",
+    )
+
+    model_config = {"batch_size": 8}
+
+    # Infer the model signature, including a representative input, the expected output, and the parameters that we would like to be able to override at inference time.
+    signature = mlflow.models.infer_signature(
+        ["This is a test!", "And this is also a test."],
+        mlflow.transformers.generate_signature_output(
+            tuned_pipeline, ["This is a test response!", "So is this."]
+        ),
+        params=model_config,
+    )
+
+
+    with mlflow.start_run(run_id=run.info.run_id):
+        model_info = mlflow.transformers.log_model(
+            transformers_model=tuned_pipeline,
+            artifact_path="fine_tuned",
+            signature=signature,
+            input_example=["Pass in a string", "And have it mark as spam or not."],
+            model_config=model_config,
+        )
+
     model.save_pretrained(f"{TRAINED_MODEL}/{config.training_config.output_dir}")
     tokenizer.save_pretrained(f"{TRAINED_MODEL}/{config.training_config.output_dir}")
 
