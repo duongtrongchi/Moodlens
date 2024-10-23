@@ -35,7 +35,8 @@ Key features include:
 - Sentiment Analysis: Gauge the overall mood and satisfaction levels across the organization.
 - Text Summarization: Condense large volumes of feedback into actionable insights.
 
-## Architecture
+
+## System Design
 ![Alt text](./archive/Moodlens-Architecture.png)
 
 ## Getting Started
