@@ -2,7 +2,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/duongtrongchi/Moodlens">
-    <img src="archive/banner.png" alt="Logo" width="300" height="100">
+    <img src="archive/banner.jpg" alt="Logo" width="300" height="100">
   </a>
 
   <h3 align="center">Moodlens</h3>
