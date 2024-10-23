@@ -23,3 +23,7 @@ def run_training_pipeline():
     model = train_bert_topic_model(docs, corpus_embeddings)
 
     save_bert_topic_model(model, config.app_config.package_name)
+
+
+if __name__ == "__main__":
+    run_training_pipeline()

@@ -6,6 +6,7 @@ from inference_pipeline.config.core import config
 
 
 MODEL_PATH = config.topic_model_config.trained_path
+print(MODEL_PATH)
 model = BERTopic.load(MODEL_PATH)
 
 def predict_topic(docs: List['str']):
