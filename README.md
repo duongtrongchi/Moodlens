@@ -56,6 +56,26 @@ Key features include:
    poetry shell
    ```
 
+2.1 To run training pipeline
+  ```bash
+   cd scripts
+
+   bash run_bert_topic_training_pipeline.sh
+  ```
+
+2.2 To run inference pipeline
+  ```bash
+   cd scripts
+
+   bash run_inference_pipeline.sh
+  ```
+2.3 To run feature pipeline ui
+  ```bash
+   cd scripts
+
+   bash run_feature_pipeline_ui.sh
+  ```
+
 
 ## Contributing
 
