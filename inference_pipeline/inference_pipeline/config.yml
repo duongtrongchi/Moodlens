@@ -4,4 +4,4 @@ sentiment_analysis:
   task: sentiment-analysis
 
 topic_modeling:
-  trained_path: /Users/duongtrongchi/engineering/personal/Moodlens/training_pipeline/topic_modeling/topic_modeling/trained_model/bert_topic_modeling_v0.0.0
+  trained_path: /teamspace/studios/this_studio/nlp-hr-feedback/training_pipeline/topic_modeling/topic_modeling/trained_model/bert_topic_modeling_v0.0.0
