@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from typing import List
 from fastapi import APIRouter
 
-from inference_pipeline.schemas.inference import SentimentAnalysisInput, TopicModelInput
+from inference_pipeline.schemas.inference import SentimentAnalysisInput, TopicModelInput, SummarizationInput
 from inference_pipeline.services.topic_modeling import predict_topic
 from inference_pipeline.services.sentimet_analysis import classifier
 from inference_pipeline.services.summarization import initialize_summarization_model, summarize_employee_reviews
@@ -36,10 +36,10 @@ async def generate_topic(input_data: TopicModelInput):
 
 
 @router.post("/summarize-employee-reviews/")
-async def summarize_reviews(reviews: List[str]):
+async def summarize_reviews(reviews: SummarizationInput):
     try:
         model = initialize_summarization_model(GOOGLE_API_KEY, SYSTEM_PROMPT)
-        result = summarize_employee_reviews(model, reviews)
+        result = summarize_employee_reviews(model, reviews.docs)
         return {"data": result}
     except Exception as e:
         return {"error": str(e)}
