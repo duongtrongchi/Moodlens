@@ -4,6 +4,8 @@ mlruns/
 
 trained_models/
 
+datasets/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
