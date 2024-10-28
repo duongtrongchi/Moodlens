@@ -8,7 +8,7 @@ trained_models/
 __pycache__/
 *.py[cod]
 *$py.class
-
+training_pipeline/topic_modeling/topic_modeling/trained_model/bert_topic_modeling_v0.0.0
 # C extensions
 *.so
 
